@@ -1,0 +1,18 @@
+<launch>
+    <arg name="configuration_directory" default="$(find iros_vision)/config"/>
+    <arg name="size" default="kid"/>
+    <arg name="cam_index" default="0"/>
+
+    <!-- Camera Settings -->
+    <include file="$(find op3_camera_setting_tool)/launch/op3_camera_setting_tool.launch" >
+        <arg name="config_path" value="$(arg configuration_directory)/camera_settings.yaml"/>
+        <arg name="camera_index" value="$(arg cam_index)"/>
+    </include>
+
+
+    <node name="piano_detector_node" pkg="iros_vision" type="piano_detector_node.py" output="screen">
+        <param name="configuration_directory" type="str" value="$(arg configuration_directory)"/>
+        <param name="cam_index" value="$(arg cam_index)"/>
+        <param name="size" type="string" value="$(arg size)"/>
+    </node>
+</launch>

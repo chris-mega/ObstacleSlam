@@ -1,0 +1,22 @@
+object:
+- colour: [255, 0, 0]
+  lower_bound: [17, 73, 124]
+  max_size: 50000
+  min_size: 300
+  multiple: true
+  name: yellow
+  upper_bound: [111, 252, 255]
+- colour: [0, 0, 255]
+  lower_bound: [0, 205, 87]
+  max_size: 50000
+  min_size: 300
+  multiple: true
+  name: cup
+  upper_bound: [255, 255, 204]
+- colour: [0, 255, 0]
+  lower_bound: [145, 133, 188]
+  max_size: 50000
+  min_size: 200
+  multiple: false
+  name: C2
+  upper_bound: [185, 220, 243]

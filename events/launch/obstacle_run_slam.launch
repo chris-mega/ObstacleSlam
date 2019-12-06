@@ -1,0 +1,20 @@
+<launch>
+    <arg name="event" default="obstacle_run_slam"/>
+    <arg name="size"/>
+
+
+    <!-- robotis op3 manager -->
+    <include file="$(find op3_manager)/launch/op3_manager.launch">
+        <arg name="size" value="$(arg size)"/>
+    </include>
+
+    <!-- vision -->
+    <include file="$(find iros_vision)/launch/piano_detector.launch">
+        <arg name="size" value="$(arg size)"/>
+    </include>
+
+    <node name="$(arg event)_node" pkg="events" type="$(arg event)_node.py" output="screen">
+        <param name="event" type="str" value="$(arg event)" />
+        <param name="size" type="string" value="$(arg size)" />
+    </node>
+</launch>

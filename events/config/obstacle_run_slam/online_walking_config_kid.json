@@ -1,0 +1,73 @@
+{
+    "walk_params": {
+        "initial": {
+            "balance": true,
+            "dsp_ratio": 0.2,
+            "lipm_height": 0.12,
+            "foot_height_max": 0.05,
+            "zmp_offset_x": 0.000,
+            "zmp_offset_y": 0.000,
+            "foot_distance": 0.085,
+            "body_x": 0.015,
+            "body_y": 0.0,
+            "body_z": 0.0
+        }
+    },
+    "goal_states":{
+        "march":{
+            "step_time": 0.65,
+            "step_number": 1,
+            "step_length": 0,
+            "side_length": 0,
+            "step_angle": 0,
+            "start_leg": "right",
+            "command": "forward"
+        },
+        "forward":{
+            "step_time": 0.15,
+            "step_number": 2,
+            "step_length": 0,
+            "side_length": 0,
+            "step_angle": 0,
+            "start_leg": "right",
+            "command": "forward"
+        },
+        "left":{
+            "step_time": 0.6,
+            "step_number": 1,
+            "step_length": 0,
+            "side_length": 0.3,
+            "step_angle": 0,
+            "start_leg": "left",
+            "command": "left"
+        },
+        "right":{
+            "step_time": 0.6,
+            "step_number": 1,
+            "step_length": 0,
+            "side_length": 0.3,
+            "step_angle": 0,
+            "start_leg": "right",
+            "command": "right"
+        },
+        "turn_right":{
+            "step_time": 0.5,
+            "step_number": 1,
+            "step_length": 0,
+            "side_length": 0,
+            "step_angle": 10,
+            "start_leg": "right",
+            "command": "turn_right"
+        },
+        "turn_left":{
+            "step_time": 0.5,
+            "step_number": 1,
+            "step_length": 0,
+            "side_length": 0,
+            "step_angle": 10,
+            "start_leg": "left",
+            "command": "turn_left"
+        }
+    }
+    
+}
