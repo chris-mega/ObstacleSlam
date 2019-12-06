@@ -88,10 +88,16 @@ def avoid_obstacles():
 
             obst_near = False
             
-            if localization.angle > 0:
-                localization.turn_left(time=0.2)                  
+            if yellow_pos['center'] > 0 or yellow_pos['up'] > 0:
+                if localization.angle > 0:
+                    localization.turn_left(time=0.4) 
+                elif localization.angle < 0:
+                    localization.turn_right(time=0.4)
             else:
-                localization.turn_right(time=0.2)
+                if yellow_pos['left'] > 0 or yellow_pos['up_left']:
+                    localization.turn_right(time=0.2)
+                elif yellow_pos['right'] > 0 or yellow_pos['up_right'] > 0:
+                    localization.turn_left(time=0.2)
 
             for c in range(len(obstacles.cup.x)):
                 cup_x = obstacles.cup.x[c] + obstacles.cup.width[c]/2 
@@ -104,9 +110,10 @@ def avoid_obstacles():
 
             if obst_near:
                 if localization.angle > 0:
-                    localization.turn_left(time=0.6)              
+                    localization.turn_left(time=0.6)
                 else:
                     localization.turn_right(time=0.6)
+            
                 
             continue
         

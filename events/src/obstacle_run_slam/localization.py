@@ -92,7 +92,7 @@ class Localization(object):
         self.__robot_pos_pub.publish(msg)
 
     def update_curr_pos(self, msg):
-        self.x_distance = msg.position.x
-        self.y_distance = msg.position.y
-        self.angle = msg.position.y
+        # self.x_distance = msg.position.x
+        # self.y_distance = msg.position.y
+        self.angle = msg.position.z
 
